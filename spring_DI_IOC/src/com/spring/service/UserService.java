@@ -17,4 +17,9 @@ public class UserService {
 	public void save(UserModel userModel) {
 		userDao.save(userModel);
 	}
+
+	public UserService(UserDao userDao) {
+		super();
+		this.userDao = userDao;
+	}
 }

@@ -7,11 +7,15 @@
     <!-- services -->
 
     <bean id="userService" class="com.spring.service.UserService">
-        <property name="userDao" ref="uaweDao"/>
+       <!-- <property name="userDao" ref="uaweDao"/>-->
+        <constructor-arg >
+        	<ref bean="uaweDao"/>
+        </constructor-arg>
 		<!-- name 代表UserService中需要的bean  ref是参考的bean 是下面的那个bean-->        
         <!-- additional collaborators and configuration for this bean go here -->
     </bean>
 
     <!-- more bean definitions for services go here -->
 	<bean id="uaweDao" class="com.spring.dao.impl.UserDaoImpl"></bean>
+	
 </beans>
